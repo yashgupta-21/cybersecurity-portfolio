@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Termux Tools Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      line-height: 2;
+      padding: 30px;
+    }
+    h1 {
+      color: #00ff00;
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      color: #00ff99;
+      font-size: 30px;
+      margin-top: 40px;
+      border-bottom: 2px solid #0f0;
+      padding-bottom: 10px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      padding: 6px 10px;
+      border-radius: 4px;
+      color: #00ffff;
+      font-size: 18px;
+      display: inline-block;
+      margin-top: 5px;
+    }
+    ul {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>📱 Termux Tools Guide</h1>
+
+<h2>What is Termux?</h2>
+<p><strong>Termux</strong> is a powerful Linux terminal emulator for Android that allows you to use the Linux shell and command-line tools directly on your smartphone. It requires no root access and supports many programming and hacking tools.</p>
+
+<h2>Why Use Termux?</h2>
+<ul>
+  <li>Run Linux commands on Android</li>
+  <li>Install hacking tools and write scripts</li>
+  <li>Practice penetration testing and ethical hacking</li>
+</ul>
+
+<h2>How to Install Termux</h2>
+<ol>
+  <li>Do <strong>NOT</strong> install from Play Store</li>
+  <li>Use <a href="https://f-droid.org/en/packages/com.termux/" target="_blank">F-Droid</a> to download</li>
+  <li>Install and open Termux app</li>
+</ol>
+
+<h2>Top 20+ Termux Tools (With Commands)</h2>
+
+<ol>
+  <li><strong>Metasploit</strong><br>
+    <code>pkg install unstable-repo</code><br>
+    <code>pkg install metasploit</code><br>
+    <code>msfconsole</code>
+  </li>
+
+  <li><strong>Nmap</strong><br>
+    <code>pkg install nmap</code><br>
+    <code>nmap -sV example.com</code>
+  </li>
+
+  <li><strong>Sqlmap</strong><br>
+    <code>pkg install python</code><br>
+    <code>git clone https://github.com/sqlmapproject/sqlmap</code><br>
+    <code>cd sqlmap</code><br>
+    <code>python sqlmap.py -u "http://target.com?id=1" --dbs</code>
+  </li>
+
+  <li><strong>Hydra</strong><br>
+    <code>pkg install hydra</code><br>
+    <code>hydra -l admin -P passwords.txt ftp://target</code>
+  </li>
+
+  <li><strong>Termshark</strong> (Wireshark-like)<br>
+    <code>pkg install termshark</code><br>
+    <code>termshark</code>
+  </li>
+
+  <li><strong>John the Ripper</strong><br>
+    <code>pkg install john</code><br>
+    <code>john --wordlist=rockyou.txt hash.txt</code>
+  </li>
+
+  <li><strong>Aircrack-ng</strong><br>
+    <code>pkg install aircrack-ng</code>
+  </li>
+
+  <li><strong>Netcat</strong><br>
+    <code>pkg install netcat</code><br>
+    <code>nc -lvp 4444</code>
+  </li>
+
+  <li><strong>Wget</strong><br>
+    <code>pkg install wget</code><br>
+    <code>wget http://site.com/file.txt</code>
+  </li>
+
+  <li><strong>Curl</strong><br>
+    <code>pkg install curl</code><br>
+    <code>curl http://target.com</code>
+  </li>
+
+  <li><strong>Git</strong><br>
+    <code>pkg install git</code><br>
+    <code>git clone https://github.com/toolname.git</code>
+  </li>
+
+  <li><strong>Python</strong><br>
+    <code>pkg install python</code><br>
+    <code>python3 script.py</code>
+  </li>
+
+  <li><strong>PHP</strong><br>
+    <code>pkg install php</code><br>
+    <code>php script.php</code>
+  </li>
+
+  <li><strong>Figlet & Toilet</strong><br>
+    <code>pkg install figlet toilet</code><br>
+    <code>figlet Hello</code> or <code>toilet World</code>
+  </li>
+
+  <li><strong>Tool-X</strong><br>
+    <code>git clone https://github.com/Rajkumrdusad/Tool-X</code><br>
+    <code>cd Tool-X && chmod +x install.aex && ./install.aex</code>
+  </li>
+
+  <li><strong>RED HAWK</strong><br>
+    <code>git clone https://github.com/Tuhinshubhra/RED_HAWK</code><br>
+    <code>cd RED_HAWK && php rhawk.php</code>
+  </li>
+
+  <li><strong>Ngrok</strong><br>
+    <code>pkg install wget unzip</code><br>
+    <code>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip</code><br>
+    <code>unzip ngrok-stable-linux-arm.zip</code><br>
+    <code>./ngrok http 8080</code>
+  </li>
+
+  <li><strong>SSH</strong><br>
+    <code>pkg install openssh</code><br>
+    <code>ssh user@ip</code>
+  </li>
+
+  <li><strong>Cupp</strong> (Password generator)<br>
+    <code>git clone https://github.com/Mebus/cupp</code><br>
+    <code>cd cupp && python3 cupp.py</code>
+  </li>
+
+  <li><strong>Recon-ng</strong><br>
+    <code>git clone https://github.com/lanmaster53/recon-ng.git</code><br>
+    <code>cd recon-ng && python3 recon-ng</code>
+  </li>
+
+</ol>
+
+<h2>✅ Always run this first:</h2>
+<code>pkg update && pkg upgrade</code>
+
+<h2>💡 Final Tip:</h2>
+<p>Practice using these tools on your Android phone. Termux is a mini Linux lab in your pocket. Learn, test, and grow your ethical hacking skills every day!</p>
+
+</body>
+</html>

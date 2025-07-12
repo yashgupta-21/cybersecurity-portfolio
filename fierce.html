@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fierce - DNS Reconnaissance Tool</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      font-size: 40px;
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 26px;
+      color: #ff0066;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 6px;
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 18px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 10px;
+      display: inline-block;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .danger {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Fierce</h1>
+
+  <h2>💡 What is Fierce?</h2>
+  <p>
+    Fierce is a **DNS reconnaissance** tool used to locate non-contiguous IP space and hostnames against specified domains. It is a valuable tool for ethical hackers during the **information-gathering phase** of penetration testing.
+  </p>
+
+  <h2>⚙️ Key Features</h2>
+  <ul>
+    <li>DNS enumeration and brute-forcing</li>
+    <li>Locate internal and external IP ranges</li>
+    <li>Identify misconfigured or publicly exposed services</li>
+    <li>Useful for discovering hidden subdomains</li>
+  </ul>
+
+  <h2>📦 Installation</h2>
+  <p>Install using these commands:</p>
+  <code>apt update && apt upgrade</code><br>
+  <code>apt install fierce</code> <span>(on Kali Linux)</span><br><br>
+  <p>Or clone from GitHub:</p>
+  <code>git clone https://github.com/mschwager/fierce</code><br>
+  <code>cd fierce</code><br>
+  <code>chmod +x fierce.pl</code>
+
+  <h2>🚀 Basic Usage</h2>
+  <code>perl fierce.pl -dns example.com</code><br>
+  <p>This will scan the target domain and try to find DNS-related info including IP ranges and subdomains.</p>
+
+  <h2>🔧 Common Options</h2>
+  <ul>
+    <li><code>-dns</code> – Target domain (e.g. <code>example.com</code>)</li>
+    <li><code>-file</code> – Wordlist file for subdomain brute-force</li>
+    <li><code>-search</code> – Search specific keywords</li>
+    <li><code>-delay</code> – Delay between queries to avoid detection</li>
+    <li><code>-wide</code> – Scan a wide IP range</li>
+  </ul>
+
+  <h2>🧪 Example Commands</h2>
+  <code>perl fierce.pl -dns hackerlab.com</code><br>
+  <code>perl fierce.pl -dns target.org -file wordlist.txt</code><br>
+
+  <h2>💼 Use Cases</h2>
+  <ul>
+    <li>Identify vulnerable or hidden subdomains</li>
+    <li>Gather intel before launching exploits</li>
+    <li>Help in footprinting an organization</li>
+    <li>Discover open DNS records & zone transfers</li>
+  </ul>
+
+  <h2 class="danger">⚠️ Legal Notice</h2>
+  <p class="danger">
+    Use Fierce only for ethical hacking or legal penetration testing. Unauthorized scanning of domains can be illegal and unethical.
+  </p>
+
+</body>
+</html>

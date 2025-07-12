@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Wireshark Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 6px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕵️‍♂️ Wireshark Tool Guide</h1>
+
+  <h2>What is Wireshark?</h2>
+  <p><strong>Wireshark</strong> is a powerful, open-source network protocol analyzer. It allows cybersecurity professionals to capture and inspect data packets in real-time, helping to troubleshoot networks, analyze traffic, and detect suspicious activity.</p>
+
+  <h2>Why Use Wireshark?</h2>
+  <ul>
+    <li>To analyze live network traffic</li>
+    <li>To detect malicious activity</li>
+    <li>To troubleshoot connectivity issues</li>
+    <li>To study protocols and learn networking</li>
+    <li>To capture passwords (in insecure environments)</li>
+  </ul>
+
+  <h2>Installing Wireshark (Linux or Windows)</h2>
+  <h3>For Linux (Debian-based):</h3>
+  <ol>
+    <li>Update packages:
+      <br><code>sudo apt update</code>
+    </li>
+    <li>Install Wireshark:
+      <br><code>sudo apt install wireshark</code>
+    </li>
+    <li>Allow non-root users:
+      <br><code>sudo dpkg-reconfigure wireshark-common</code><br>
+      <code>sudo usermod -aG wireshark $USER</code>
+    </li>
+    <li>Restart your system.</li>
+  </ol>
+
+  <h3>For Windows:</h3>
+  <ol>
+    <li>Download from: <a href="https://www.wireshark.org/download.html" target="_blank">Wireshark Official Website</a></li>
+    <li>Install and choose to include WinPcap or Npcap during setup</li>
+    <li>Launch and start capturing!</li>
+  </ol>
+
+  <h2>Basic Usage Steps</h2>
+  <ol>
+    <li>Open Wireshark</li>
+    <li>Select the network interface (Wi-Fi, Ethernet, etc.)</li>
+    <li>Click "Start" to begin capturing packets</li>
+    <li>Use filters like:
+      <br><code>http</code> — show only HTTP traffic<br>
+      <code>ip.addr == 192.168.1.1</code> — filter by IP address
+    </li>
+    <li>Click on any packet to view details</li>
+    <li>Save captures as `.pcap` files for later analysis</li>
+  </ol>
+
+  <h2>Useful Filters</h2>
+  <ul>
+    <li><code>tcp</code> — Show TCP packets</li>
+    <li><code>udp</code> — Show UDP packets</li>
+    <li><code>dns</code> — Show DNS traffic</li>
+    <li><code>ftp</code> — Show FTP traffic</li>
+    <li><code>http.request</code> — Show only HTTP requests</li>
+  </ul>
+
+  <h2>Advanced Tips</h2>
+  <ul>
+    <li>Capture passwords from insecure protocols like FTP or HTTP</li>
+    <li>Follow a TCP stream to see full conversation:
+      <br>Right-click → Follow → TCP Stream
+    </li>
+    <li>Export packet data or objects (like files or images)</li>
+    <li>Use color rules to highlight suspicious traffic</li>
+    <li>Set capture filters before capturing for better performance</li>
+  </ul>
+
+  <h2>Warning</h2>
+  <ul>
+    <li>Do not capture traffic on networks you don't own or have permission to monitor</li>
+    <li>Use in ethical hacking labs or with explicit authorization</li>
+  </ul>
+
+</body>
+</html>

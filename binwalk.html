@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Binwalk - Firmware Analysis Tool</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      font-size: 40px;
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-size: 26px;
+      color: #ff0066;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 6px;
+      margin-top: 30px;
+    }
+    p, li {
+      font-size: 18px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 10px;
+      display: inline-block;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    .note {
+      color: #ffcc00;
+    }
+    .danger {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Binwalk</h1>
+
+  <h2>🧠 What is Binwalk?</h2>
+  <p>
+    Binwalk is a powerful tool for analyzing, reverse engineering, and extracting firmware images. It is widely used by cybersecurity researchers, IoT testers, and ethical hackers to uncover embedded files, file systems, and executable code from binary firmware files.
+  </p>
+
+  <h2>⚙️ Features</h2>
+  <ul>
+    <li>Scan and analyze binary files for embedded files</li>
+    <li>Extract files and file systems from firmware images</li>
+    <li>Identify compression algorithms, executable code, and bootloaders</li>
+    <li>Reverse-engineer embedded devices</li>
+  </ul>
+
+  <h2>💻 Installation (Linux/Termux)</h2>
+  <code>pkg update && pkg upgrade</code><br>
+  <code>pkg install git python</code><br>
+  <code>pkg install binutils</code><br>
+  <code>pip install binwalk</code>
+
+  <h2>🚀 Basic Usage</h2>
+  <code>binwalk firmware.bin</code><br>
+  <p>This scans the firmware file and lists all recognizable signatures like filesystems, compressed files, etc.</p>
+
+  <h2>📦 Extracting Files</h2>
+  <code>binwalk -e firmware.bin</code><br>
+  <p>This command extracts known files and folders from the binary.</p>
+
+  <h2>🛠 Advanced Extraction</h2>
+  <code>binwalk -Me firmware.bin</code><br>
+  <p>This recursively extracts embedded files and directories for deeper analysis.</p>
+
+  <h2>🧪 Example Use Case</h2>
+  <ol>
+    <li>Download a firmware image of a router or IoT device.</li>
+    <li>Run: <code>binwalk firmware.img</code></li>
+    <li>Review the extracted filesystem or file locations.</li>
+    <li>Use forensic or static analysis tools on the extracted files.</li>
+  </ol>
+
+  <h2>🔍 Common Options</h2>
+  <ul>
+    <li><code>-e</code>: Extract files</li>
+    <li><code>-r</code>: Raw extraction</li>
+    <li><code>-M</code>: Recursive scan</li>
+    <li><code>-B</code>: Show entropy</li>
+    <li><code>-D &lt;type:ext&gt;</code>: Extract only specific file types (e.g., <code>-D 'zip:zip'</code>)</li>
+  </ul>
+
+  <h2>🧠 Use Cases</h2>
+  <ul>
+    <li>Reverse engineering embedded firmware</li>
+    <li>IoT device hacking</li>
+    <li>Static malware analysis in firmware</li>
+    <li>Extracting hidden or compressed files from binary blobs</li>
+  </ul>
+
+  <h2 class="danger">⚠️ Legal Notice</h2>
+  <p class="danger">
+    Use Binwalk only for educational purposes or on firmware you have legal rights to analyze. Unauthorized reverse engineering may be illegal.
+  </p>
+
+</body>
+</html>

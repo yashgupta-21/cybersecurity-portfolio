@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Snort Tool Guide</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡️ Snort Tool Guide</h1>
+
+  <h2>What is Snort?</h2>
+  <p>
+    <strong>Snort</strong> is an open-source Intrusion Detection System (IDS) and Intrusion Prevention System (IPS). It analyzes network traffic in real-time and can detect suspicious or malicious activity using defined rules and signatures.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Real-time traffic analysis</li>
+    <li>Packet logging</li>
+    <li>Protocol analysis</li>
+    <li>Detect port scans, buffer overflow attacks, malware, etc.</li>
+    <li>Highly customizable rule sets</li>
+  </ul>
+
+  <h2>Installation</h2>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install snort</code>
+
+  <h3>Verify Installation:</h3>
+  <code>snort -V</code>
+
+  <h2>Snort Modes</h2>
+  <ul>
+    <li><strong>Sniffer Mode</strong> – Reads packets from the network and displays them</li>
+    <li><strong>Packet Logger Mode</strong> – Logs packets to a file</li>
+    <li><strong>NIDS Mode</strong> – Detects intrusions using defined rules</li>
+  </ul>
+
+  <h2>Step-by-Step Usage</h2>
+
+  <h3>1. Sniffer Mode:</h3>
+  <code>sudo snort -v</code><br>
+  <p>This shows all incoming packets in real-time.</p>
+
+  <h3>2. Packet Logger Mode:</h3>
+  <code>sudo snort -dev -l /path/to/log</code><br>
+  <p>Logs packets to the specified directory.</p>
+
+  <h3>3. IDS Mode:</h3>
+  <code>sudo snort -A console -q -c /etc/snort/snort.conf -i eth0</code><br>
+  <p><strong>-A:</strong> Alert mode, <strong>-i:</strong> interface</p>
+
+  <h2>Writing Basic Snort Rules</h2>
+
+  <h3>Example Rule:</h3>
+  <code>alert tcp any any -> any 80 (msg:"HTTP Access"; sid:1000001;)</code><br>
+  <p>This alerts on any TCP traffic to port 80 (HTTP).</p>
+
+  <h2>Log Analysis</h2>
+  <p>Logs are stored in the path you specify. Use tools like Wireshark or manually inspect <code>alert.ids</code> files for suspicious entries.</p>
+
+  <h2>Important Files</h2>
+  <ul>
+    <li><code>/etc/snort/snort.conf</code> – Main configuration file</li>
+    <li><code>/etc/snort/rules/</code> – Rule files directory</li>
+  </ul>
+
+  <h2>Snort Use Cases</h2>
+  <ul>
+    <li>Home or small business network monitoring</li>
+    <li>Detect brute-force attacks, DoS, SQL injection</li>
+    <li>Integration into SIEM tools</li>
+  </ul>
+
+  <h2>⚠️ Caution</h2>
+  <p>Always update rules from the Snort website and test your rules in a lab environment before applying on live systems.</p>
+
+</body>
+</html>

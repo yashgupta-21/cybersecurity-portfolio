@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Maltego Tool Guide</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      font-size: 44px;
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 28px;
+      color: #00ffcc;
+      margin-top: 40px;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 8px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 5px 10px;
+      display: inline-block;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Maltego — Powerful OSINT & Data Mining Tool</h1>
+
+  <h2>What is Maltego?</h2>
+  <p>
+    <strong>Maltego</strong> is a powerful open-source intelligence (OSINT) and graphical link analysis tool. It helps investigators and ethical hackers discover relationships between people, companies, domains, IP addresses, emails, and much more.
+  </p>
+
+  <h2>Main Features</h2>
+  <ul>
+    <li>Graph-based visual link analysis</li>
+    <li>Collects data from public sources (OSINT)</li>
+    <li>Discovers relationships between domains, IPs, people, networks, etc.</li>
+    <li>Integrates with APIs like Shodan, VirusTotal, HaveIBeenPwned, etc.</li>
+    <li>Supports custom data mining via transforms</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>On Linux (via GUI):</h3>
+  <ol>
+    <li>Go to <a href="https://www.maltego.com/downloads/" target="_blank">https://www.maltego.com/downloads/</a></li>
+    <li>Download Maltego for your OS</li>
+    <li>Install and launch it</li>
+    <li>Create a free account or login</li>
+  </ol>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install maltego</code>
+
+  <h2>Getting Started with Maltego</h2>
+  <ol>
+    <li>Open Maltego</li>
+    <li>Select “Maltego CE” (Community Edition)</li>
+    <li>Drag an entity (like a domain, email, or IP) onto the canvas</li>
+    <li>Right-click and choose a transform (e.g., "To DNS Name", "To Email")</li>
+    <li>Explore the linked results visually</li>
+  </ol>
+
+  <h2>Popular Use Cases</h2>
+  <ul>
+    <li>Footprinting domains and subdomains</li>
+    <li>Finding email leaks or breaches</li>
+    <li>Tracking digital identity of targets</li>
+    <li>Corporate intelligence and brand protection</li>
+    <li>Dark web investigations (via integrations)</li>
+  </ul>
+
+  <h2>Sample Entities You Can Explore</h2>
+  <ul>
+    <li>Person</li>
+    <li>Domain</li>
+    <li>IP Address</li>
+    <li>Email Address</li>
+    <li>Phone Number</li>
+    <li>Company</li>
+    <li>Website</li>
+  </ul>
+
+  <h2>Important Note</h2>
+  <p>
+    ⚠️ <strong>Maltego is a professional tool — always use it for legal and ethical purposes. Respect privacy laws and use it only in authorized investigations or learning environments.</strong>
+  </p>
+
+</body>
+</html>

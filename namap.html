@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nmap Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 42px;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ff99;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 6px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Nmap (Network Mapper) Tool Guide</h1>
+
+  <h2>What is Nmap?</h2>
+  <p><strong>Nmap</strong> (Network Mapper) is a free and open-source tool for network discovery and security auditing. It’s used to discover hosts, open ports, services, OS details, and vulnerabilities in a network.</p>
+
+  <h2>Why Use Nmap?</h2>
+  <ul>
+    <li>To scan networks and IP ranges</li>
+    <li>To identify open ports and services</li>
+    <li>To detect the operating system and version</li>
+    <li>To find vulnerabilities in networks</li>
+    <li>To audit firewall rules and configurations</li>
+  </ul>
+
+  <h2>How to Install Nmap in Termux</h2>
+  <ol>
+    <li>Update packages:
+      <br><code>pkg update && pkg upgrade</code>
+    </li>
+    <li>Install Nmap:
+      <br><code>pkg install nmap</code>
+    </li>
+    <li>Check version:
+      <br><code>nmap --version</code>
+    </li>
+  </ol>
+
+  <h2>Basic Nmap Commands</h2>
+  <ul>
+    <li>Scan a single IP:
+      <br><code>nmap 192.168.1.1</code>
+    </li>
+    <li>Scan a range of IPs:
+      <br><code>nmap 192.168.1.1-100</code>
+    </li>
+    <li>Scan an entire subnet:
+      <br><code>nmap 192.168.1.0/24</code>
+    </li>
+    <li>Scan multiple ports:
+      <br><code>nmap -p 22,80,443 192.168.1.1</code>
+    </li>
+    <li>Scan all 65535 ports:
+      <br><code>nmap -p- 192.168.1.1</code>
+    </li>
+    <li>Service version detection:
+      <br><code>nmap -sV 192.168.1.1</code>
+    </li>
+    <li>Operating system detection:
+      <br><code>nmap -O 192.168.1.1</code>
+    </li>
+    <li>Aggressive scan:
+      <br><code>nmap -A 192.168.1.1</code>
+    </li>
+  </ul>
+
+  <h2>Advanced Nmap Scanning Examples</h2>
+  <ul>
+    <li>Scan with output saved to file:
+      <br><code>nmap -oN scan.txt 192.168.1.1</code>
+    </li>
+    <li>Detect firewall:
+      <br><code>nmap -sA 192.168.1.1</code>
+    </li>
+    <li>UDP Scan:
+      <br><code>nmap -sU 192.168.1.1</code>
+    </li>
+    <li>Scan with NSE scripts:
+      <br><code>nmap --script vuln 192.168.1.1</code>
+    </li>
+  </ul>
+
+  <h2>Top Uses of Nmap</h2>
+  <ul>
+    <li>Find live hosts on a network</li>
+    <li>Discover open ports and running services</li>
+    <li>Identify software versions and vulnerabilities</li>
+    <li>Monitor network security</li>
+    <li>Test firewalls and security policies</li>
+  </ul>
+
+  <h2>Important Tips</h2>
+  <ul>
+    <li>Always scan ethically — never without permission</li>
+    <li>Try Nmap in labs, CTFs, and test environments</li>
+    <li>Combine Nmap with other tools for deeper results</li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>John the Ripper Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔓 John the Ripper Tool Guide</h1>
+
+  <h2>What is John the Ripper?</h2>
+  <p>
+    <strong>John the Ripper</strong> is a fast and powerful password cracking tool. It is used to perform dictionary attacks and brute-force attacks on hashed passwords from shadow files, zip files, documents, and more.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Supports many hash formats (MD5, SHA, etc.)</li>
+    <li>Cracks Linux, Windows, and encrypted archive passwords</li>
+    <li>Highly customizable and fast</li>
+    <li>Includes built-in wordlist and rules</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>On Termux:</h3>
+  <code>pkg install unstable-repo</code><br>
+  <code>pkg install john</code>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt install john</code>
+
+  <h3>Verify Installation:</h3>
+  <code>john --help</code>
+
+  <h2>Step-by-Step Usage</h2>
+  <ol>
+    <li>Collect the hashed password file (e.g., from shadow file)</li>
+    <li>Use <code>unshadow</code> to merge /etc/passwd and /etc/shadow:</li>
+    <code>unshadow passwd.txt shadow.txt > merged.txt</code>
+    <li>Start cracking with:</li>
+    <code>john merged.txt</code>
+    <li>To show cracked passwords:</li>
+    <code>john --show merged.txt</code>
+  </ol>
+
+  <h2>Example: Cracking ZIP File Password</h2>
+  <code>zip2john secret.zip > hash.txt</code><br>
+  <code>john hash.txt</code>
+
+  <h2>Supported File Types</h2>
+  <ul>
+    <li>/etc/shadow (Linux password hash)</li>
+    <li>ZIP, RAR, 7z archive passwords</li>
+    <li>PDF documents</li>
+    <li>Word/Excel documents</li>
+    <li>Raw MD5, SHA1, bcrypt, etc.</li>
+  </ul>
+
+  <h2>Tips</h2>
+  <ul>
+    <li>Use <code>--wordlist=</code> to specify custom dictionary</li>
+    <li>Use rules to mutate passwords for better results</li>
+    <li>Combine with hashcat for GPU-based cracking</li>
+  </ul>
+
+  <h2>⚠️ Legal Warning</h2>
+  <p>Always use this tool for educational and legal penetration testing only. Unauthorized password cracking is illegal.</p>
+
+</body>
+</html>

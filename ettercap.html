@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ettercap Tool Guide</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🕵️ Ettercap Tool Guide</h1>
+
+  <h2>What is Ettercap?</h2>
+  <p>
+    <strong>Ettercap</strong> is a powerful open-source network security tool used for man-in-the-middle (MITM) attacks on LAN. It supports active and passive dissection of many protocols and includes features for network sniffing, host discovery, and ARP poisoning.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>ARP poisoning and spoofing</li>
+    <li>DNS spoofing</li>
+    <li>Packet filtering</li>
+    <li>Real-time connection interception</li>
+    <li>Plugin support and GUI mode</li>
+  </ul>
+
+  <h2>Installation</h2>
+
+  <h3>On Kali Linux / Debian:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install ettercap-graphical</code>
+
+  <h3>Verify Installation:</h3>
+  <code>ettercap -v</code>
+
+  <h2>Launching Ettercap</h2>
+  <p>Ettercap can run in both CLI and GUI mode:</p>
+  <code>sudo ettercap -G</code>
+  <p>This opens the graphical interface.</p>
+
+  <h2>Step-by-Step: MITM Attack Using Ettercap</h2>
+  <ol>
+    <li>Open terminal and run: <br><code>sudo ettercap -G</code></li>
+    <li>Select <strong>Sniff → Unified Sniffing</strong> → Choose your network interface (e.g., eth0 or wlan0)</li>
+    <li>Go to <strong>Hosts → Scan for Hosts</strong></li>
+    <li>Go to <strong>Hosts → Hosts List</strong>, then add Target 1 and Target 2 (usually router and victim)</li>
+    <li>Click <strong>Mitm → ARP Poisoning</strong></li>
+    <li>Select "Sniff remote connections"</li>
+    <li>Go to <strong>Start → Start Sniffing</strong></li>
+  </ol>
+
+  <h2>Example CLI MITM Command</h2>
+  <code>sudo ettercap -T -M arp:remote /192.168.1.1/ /192.168.1.100/</code>
+  <p>This command performs MITM between the router (gateway) and the victim.</p>
+
+  <h2>Additional Attacks with Plugins</h2>
+  <ul>
+    <li><strong>dns_spoof</strong> – Redirect DNS queries</li>
+    <li><strong>autoadd</strong> – Automatically add targets</li>
+    <li><strong>msg_redirect</strong> – Redirect messages</li>
+  </ul>
+
+  <h2>Precautions</h2>
+  <ul>
+    <li>Use on your own network or with permission</li>
+    <li>Can disrupt network traffic if misused</li>
+    <li>Run as root for full functionality</li>
+  </ul>
+
+  <h2>Use Cases</h2>
+  <ul>
+    <li>Network monitoring and auditing</li>
+    <li>Penetration testing of LAN environments</li>
+    <li>Ethical hacking labs and exercises</li>
+  </ul>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OWASP ZAP Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧪 OWASP ZAP Tool Guide</h1>
+
+  <h2>What is OWASP ZAP?</h2>
+  <p>
+    <strong>OWASP ZAP</strong> (Zed Attack Proxy) is one of the most popular open-source web application security scanners. It helps find security vulnerabilities in web apps during development and testing.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Automated web vulnerability scanner</li>
+    <li>Intercepting proxy for manual testing</li>
+    <li>Spider and AJAX spider</li>
+    <li>Active and passive scanning</li>
+    <li>Add-on support for extra features</li>
+  </ul>
+
+  <h2>Installation</h2>
+
+  <h3>On Kali Linux / Debian:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install zaproxy</code>
+
+  <h3>Using Snap (Any Linux):</h3>
+  <code>sudo snap install zaproxy</code>
+
+  <h3>On Windows/macOS:</h3>
+  <p>Download from: <a href="https://www.zaproxy.org/download/" target="_blank">https://www.zaproxy.org/download/</a></p>
+
+  <h2>Launching OWASP ZAP</h2>
+  <code>zaproxy</code>
+
+  <p>This will open the graphical interface of ZAP.</p>
+
+  <h2>Step-by-Step: Basic Web Scan</h2>
+  <ol>
+    <li>Start ZAP and choose “Start with default settings”</li>
+    <li>Enter target website URL in the URL bar</li>
+    <li>Click "Attack" to start an automated scan</li>
+    <li>View discovered alerts and vulnerabilities in the bottom panel</li>
+    <li>Click on each alert for details and remediation advice</li>
+  </ol>
+
+  <h2>Manual Testing with Proxy</h2>
+  <ul>
+    <li>Set browser proxy to <code>127.0.0.1:8080</code></li>
+    <li>Browse your target website</li>
+    <li>ZAP will capture all HTTP requests and responses</li>
+    <li>Use the request editor to manipulate parameters</li>
+  </ul>
+
+  <h2>Common Vulnerabilities Detected</h2>
+  <ul>
+    <li>XSS (Cross-site scripting)</li>
+    <li>SQL Injection</li>
+    <li>Insecure cookies</li>
+    <li>Information disclosure</li>
+    <li>Missing security headers</li>
+  </ul>
+
+  <h2>Important Tips</h2>
+  <ul>
+    <li>Run only on apps you own or have permission to test</li>
+    <li>Use in dev or staging environments, not live production</li>
+    <li>Combine with manual testing for best results</li>
+  </ul>
+
+</body>
+</html>

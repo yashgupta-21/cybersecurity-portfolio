@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hydra Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔐 Hydra Tool Guide</h1>
+
+  <h2>What is Hydra?</h2>
+  <p>
+    <strong>Hydra</strong> (also known as THC-Hydra) is a fast and flexible tool for conducting brute-force attacks on login credentials. It supports multiple protocols including HTTP, FTP, SSH, Telnet, SMB, RDP, and more.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Fast and reliable login cracker</li>
+    <li>Supports dictionary attacks on over 50 protocols</li>
+    <li>Parallel attack threads for speed</li>
+    <li>Command-line interface for automation</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>On Termux (Android):</h3>
+  <code>pkg update && pkg install hydra</code>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt-get install hydra</code>
+
+  <h3>Verify Installation:</h3>
+  <code>hydra -h</code>
+
+  <h2>Common Hydra Usage Examples</h2>
+
+  <h3>FTP Brute-force Attack</h3>
+  <code>hydra -l admin -P /usr/share/wordlists/rockyou.txt ftp://192.168.1.100</code>
+
+  <h3>SSH Brute-force</h3>
+  <code>hydra -l root -P passwords.txt ssh://192.168.1.100</code>
+
+  <h3>HTTP Login Form Attack</h3>
+  <code>hydra -L usernames.txt -P passwords.txt 192.168.1.100 http-post-form "/login.php:user=^USER^&pass=^PASS^:F=incorrect"</code>
+
+  <h2>Step-by-Step Guide</h2>
+  <ol>
+    <li>Gather target IP or domain</li>
+    <li>Know the login protocol (FTP, SSH, etc.)</li>
+    <li>Create or find wordlists for usernames and passwords</li>
+    <li>Use appropriate Hydra command</li>
+    <li>Analyze results and test discovered credentials</li>
+  </ol>
+
+  <h2>Important Protocols Supported by Hydra</h2>
+  <ul>
+    <li>ftp, ssh, telnet, smtp, pop3, imap</li>
+    <li>http-get, http-post, https-form</li>
+    <li>smb, rdp, vnc, mysql, mssql</li>
+  </ul>
+
+  <h2>Precautions</h2>
+  <ul>
+    <li>Use on your own systems or with written permission</li>
+    <li>Illegal usage can lead to serious consequences</li>
+    <li>Always conduct responsible ethical hacking</li>
+  </ul>
+
+</body>
+</html>

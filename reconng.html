@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recon-ng Tool Guide</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 1.8;
+    }
+    h1 {
+      font-size: 44px;
+      color: #00ffff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 28px;
+      color: #00ffcc;
+      margin-top: 40px;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 8px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 5px 10px;
+      display: inline-block;
+      margin: 4px 0;
+      border-radius: 4px;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 10px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛰️ Recon-ng — Advanced Web Reconnaissance Framework</h1>
+
+  <h2>What is Recon-ng?</h2>
+  <p>
+    <strong>Recon-ng</strong> is a full-featured Web Reconnaissance framework written in Python. It's similar to Metasploit but focused on passive and active information gathering. It provides powerful modules to automate OSINT tasks and gather intelligence from multiple public sources.
+  </p>
+
+  <h2>Main Features</h2>
+  <ul>
+    <li>Modular framework similar to Metasploit</li>
+    <li>Pre-built recon modules for domains, contacts, IPs, etc.</li>
+    <li>Built-in reporting and database interaction</li>
+    <li>Supports API keys for advanced data collection</li>
+    <li>Exports results in multiple formats</li>
+  </ul>
+
+  <h2>Installation</h2>
+  <h3>In Kali Linux:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install recon-ng</code>
+
+  <h3>Using Git:</h3>
+  <code>git clone https://github.com/lanmaster53/recon-ng.git</code><br>
+  <code>cd recon-ng</code><br>
+  <code>python3 recon-ng</code>
+
+  <h2>Getting Started with Recon-ng</h2>
+  <ol>
+    <li>Launch Recon-ng</li>
+    <li>Create a workspace: <code>workspaces create mytarget</code></li>
+    <li>Add a domain: <code>add domains example.com</code></li>
+    <li>List modules: <code>modules search</code></li>
+    <li>Select a module: <code>modules load recon/domains-hosts/google_site_web</code></li>
+    <li>Set options: <code>options set SOURCE example.com</code></li>
+    <li>Run module: <code>run</code></li>
+  </ol>
+
+  <h2>Popular Modules</h2>
+  <ul>
+    <li><code>recon/domains-hosts/google_site_web</code> - Find subdomains</li>
+    <li><code>recon/hosts-hosts/resolve</code> - Resolve hostnames to IP</li>
+    <li><code>recon/contacts/enum/http</code> - Gather emails via HTTP scraping</li>
+    <li><code>recon/domains-contacts/whois_pocs</code> - Get WHOIS data</li>
+    <li><code>report/html</code> - Export data to HTML report</li>
+  </ul>
+
+  <h2>Best Use Cases</h2>
+  <ul>
+    <li>Subdomain enumeration</li>
+    <li>WHOIS and contact data gathering</li>
+    <li>Email address and social handle discovery</li>
+    <li>Automated recon for bug bounty programs</li>
+    <li>Red team OSINT operations</li>
+  </ul>
+
+  <h2>Important Note</h2>
+  <p>
+    🔐 Always use Recon-ng ethically and legally. This tool is meant for educational, testing, and authorized security research purposes only.
+  </p>
+
+</body>
+</html>

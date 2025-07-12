@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>OpenVAS Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡️ OpenVAS Tool Guide</h1>
+
+  <h2>What is OpenVAS?</h2>
+  <p>
+    <strong>OpenVAS</strong> (Open Vulnerability Assessment System) is a full-featured open-source vulnerability scanner used to find security holes in systems and networks. It is widely used by security professionals for vulnerability assessment and compliance auditing.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Powerful vulnerability scanning engine</li>
+    <li>Supports thousands of test plugins</li>
+    <li>Web-based management with Greenbone Security Assistant (GSA)</li>
+    <li>Scheduled scans and detailed reports</li>
+    <li>Supports CVE scanning and compliance checks</li>
+  </ul>
+
+  <h2>Installation</h2>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install openvas</code><br>
+  <code>sudo gvm-setup</code><br>
+  <code>sudo gvm-check-setup</code>
+
+  <h2>Starting OpenVAS</h2>
+  <code>sudo gvm-start</code>
+
+  <p>Once running, access the web interface (GSA) at:</p>
+  <code>https://localhost:9392</code>
+
+  <h2>Step-by-Step: Scanning with OpenVAS</h2>
+  <ol>
+    <li>Start OpenVAS: <code>sudo gvm-start</code></li>
+    <li>Open your browser and go to: <code>https://localhost:9392</code></li>
+    <li>Log in using the credentials provided during setup</li>
+    <li>Go to <strong>Scans → Tasks</strong> and click "New Task"</li>
+    <li>Enter a task name and the target IP/domain</li>
+    <li>Click "Save" and then "Start Scan"</li>
+    <li>After scan completes, view the detailed report</li>
+  </ol>
+
+  <h2>Use Cases</h2>
+  <ul>
+    <li>Enterprise vulnerability assessment</li>
+    <li>Network security audits</li>
+    <li>Penetration testing preparation</li>
+    <li>Security compliance verification (PCI-DSS, etc.)</li>
+  </ul>
+
+  <h2>Important Tips</h2>
+  <ul>
+    <li>Scan with permission to avoid legal issues</li>
+    <li>Keep the vulnerability feed up to date</li>
+    <li>Combine OpenVAS results with manual testing</li>
+  </ul>
+
+</body>
+</html>

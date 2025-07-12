@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SEToolkit Tool Guide</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #00ff00;
+      font-family: 'Courier New', monospace;
+      padding: 30px;
+      line-height: 2;
+    }
+    h1 {
+      font-size: 44px;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    h2 {
+      font-size: 30px;
+      color: #00ffff;
+      border-bottom: 2px solid #00ff00;
+      padding-bottom: 10px;
+      margin-top: 40px;
+    }
+    p, li {
+      font-size: 20px;
+    }
+    code {
+      background: #111;
+      color: #00ffff;
+      padding: 6px 12px;
+      display: inline-block;
+      border-radius: 5px;
+      margin: 5px 0;
+    }
+    ul, ol {
+      padding-left: 30px;
+    }
+    li {
+      margin-bottom: 12px;
+    }
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Social-Engineer Toolkit (SEToolkit)</h1>
+
+  <h2>What is SEToolkit?</h2>
+  <p>
+    <strong>SEToolkit</strong> (Social-Engineer Toolkit) is a powerful open-source penetration testing framework created for social engineering attacks. It’s used by ethical hackers and red teamers to simulate human-based attack vectors such as phishing, credential harvesting, and malware delivery.
+  </p>
+
+  <h2>Key Features</h2>
+  <ul>
+    <li>Spear phishing attacks</li>
+    <li>Website cloning and credential harvesting</li>
+    <li>Infectious media creation</li>
+    <li>SMS spoofing and payload generation</li>
+    <li>Arduino-based attacks and Teensy payloads</li>
+  </ul>
+
+  <h2>Installation</h2>
+
+  <h3>On Kali Linux:</h3>
+  <code>sudo apt update</code><br>
+  <code>sudo apt install set</code>
+
+  <h3>Manual Install:</h3>
+  <code>git clone https://github.com/trustedsec/social-engineer-toolkit.git</code><br>
+  <code>cd social-engineer-toolkit</code><br>
+  <code>pip3 install -r requirements.txt</code><br>
+  <code>sudo python3 setup.py</code>
+
+  <h2>Launching SEToolkit</h2>
+  <code>sudo setoolkit</code>
+
+  <p>You will be presented with a numbered menu interface in the terminal.</p>
+
+  <h2>Step-by-Step: Basic Phishing Page Attack</h2>
+  <ol>
+    <li>Run <code>sudo setoolkit</code></li>
+    <li>Select: <strong>1) Social-Engineering Attacks</strong></li>
+    <li>Then: <strong>2) Website Attack Vectors</strong></li>
+    <li>Choose: <strong>3) Credential Harvester Attack Method</strong></li>
+    <li>Select: <strong>2) Site Cloner</strong></li>
+    <li>Enter your IP address (e.g., <code>192.168.1.10</code>)</li>
+    <li>Enter the website to clone (e.g., <code>https://facebook.com</code>)</li>
+    <li>Wait—SEToolkit will clone the site and host it</li>
+    <li>Send your IP link to the target</li>
+    <li>Captured credentials will appear in your terminal</li>
+  </ol>
+
+  <h2>Important Usage Scenarios</h2>
+  <ul>
+    <li>Simulated phishing attacks</li>
+    <li>Security awareness training</li>
+    <li>Red team social engineering assessments</li>
+    <li>Payload testing and delivery</li>
+  </ul>
+
+  <h2>Legal Note</h2>
+  <p>⚠️ <strong>Use SEToolkit only in lab environments or with permission. Unauthorized use is illegal.</strong></p>
+
+</body>
+</html>
